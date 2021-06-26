@@ -22,7 +22,7 @@ spec:
         stage('Execute build') {
             steps {
                 container('node') {
-                    echo "make build"
+                    echo "make build 2"
                 }               
             }
         }
@@ -30,7 +30,7 @@ spec:
          stage('Execute tests') {
             steps {
                 container('node') {
-                    echo "make tests"
+                    echo "make tests 2"
                 }               
             }
         }
@@ -38,7 +38,7 @@ spec:
          stage('Execute deploy') {
             steps {
                 container('node') {
-                    echo "make deploy"
+                    echo "make deploy 2"
                 }               
             }
         }
