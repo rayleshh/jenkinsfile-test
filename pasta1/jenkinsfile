@@ -22,7 +22,7 @@ spec:
         stage('Execute build 1') {
             steps {
                 container('node') {
-                    echo "make build 1 teste 3"
+                    echo "make build 1 teste 4"
                 }               
             }
         }
