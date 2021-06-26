@@ -19,26 +19,26 @@ spec:
 
     stages {
 
-        stage('Execute build') {
+        stage('Execute build 2') {
             steps {
                 container('node') {
-                    echo "make build"
+                    echo "make build 2"
                 }               
             }
         }
 
-         stage('Execute tests') {
+         stage('Execute tests 2') {
             steps {
                 container('node') {
-                    echo "make tests"
+                    echo "make tests 2"
                 }               
             }
         }
 
-         stage('Execute deploy') {
+         stage('Execute deploy 2') {
             steps {
                 container('node') {
-                    echo "make deploy"
+                    echo "make deploy 2"
                 }               
             }
         }
