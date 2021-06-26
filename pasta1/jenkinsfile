@@ -1,7 +1,7 @@
 pipeline {
     agent {
         kubernetes {
-            label "worker-${project_name}-${UUID.randomUUID().toString()}"
+            label "worker-${UUID.randomUUID().toString()}"
             defaultContainer 'jnlp'
             yaml """
 apiVersion: v1
