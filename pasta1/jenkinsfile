@@ -1,0 +1,47 @@
+pipeline {
+    agent {
+        kubernetes {
+            label "worker-${project_name}-${UUID.randomUUID().toString()}"
+            defaultContainer 'jnlp'
+            yaml """
+apiVersion: v1
+kind: Pod
+spec:
+  containers:
+  - name: node
+    image: node:14.16.1-alpine3.13
+    command:
+    - cat
+    tty: true
+"""
+        }
+    }
+
+    stages {
+
+        stage('Execute build') {
+            steps {
+                container('node') {
+                    echo "make build"
+                }               
+            }
+        }
+
+         stage('Execute tests') {
+            steps {
+                container('node') {
+                    echo "make tests"
+                }               
+            }
+        }
+
+         stage('Execute deploy') {
+            steps {
+                container('node') {
+                    echo "make deploy"
+                }               
+            }
+        }
+    }
+}
+
